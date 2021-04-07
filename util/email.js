@@ -58,11 +58,11 @@ module.exports = class Email {
 
   //Sending the welcome Email
   async sendWelcome() {
-    if (process.env.NODE_ENV === 'production ') return;
+    if (process.env.NODE_ENV === 'production') return;
     await this.send('welcome', 'Welcome to the Natours family');
   }
   async sendPasswordToken() {
-    if (process.env.NODE_ENV === 'production ') return;
+    if (process.env.NODE_ENV === 'production') return;
     await this.send('forgetPassword', 'Password reset token');
   }
 };
