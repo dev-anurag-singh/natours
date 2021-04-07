@@ -19,6 +19,7 @@ const viewsRouter = require('./routes/viewsRoutes');
 
 const AppError = require('./util/appError');
 const globalErrorHandler = require('./controllers/errorController');
+const { tourCheckOut } = require('./controllers/bookingController');
 
 app.set('view engine', 'pug');
 
@@ -47,6 +48,8 @@ app.use('/api', limitter);
 // Using helmet to Set Http headers
 
 app.use(helmet());
+
+app.post('/webhookCheckout', express.raw(), tourCheckOut);
 
 // Using parser to access the body
 
