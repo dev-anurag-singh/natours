@@ -49,7 +49,11 @@ app.use('/api', limitter);
 
 app.use(helmet());
 
-app.post('/webhookCheckout', express.raw(), tourCheckOut);
+app.post(
+  '/webhookCheckout',
+  express.raw({ type: 'application/json' }),
+  tourCheckOut
+);
 
 // Using parser to access the body
 

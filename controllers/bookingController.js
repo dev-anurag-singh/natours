@@ -62,7 +62,7 @@ exports.tourCheckOut = (req, res) => {
       process.env.STRIPE_WEBHOOK_SECRET
     );
   } catch (err) {
-    res.status(400).send('Failed');
+    return res.status(400).send('Failed');
   }
 
   if (event.type === 'checkout.session.completed')
