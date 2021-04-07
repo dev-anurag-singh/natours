@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const app = express();
 app.enable('trust proxy');
@@ -22,6 +23,12 @@ const globalErrorHandler = require('./controllers/errorController');
 app.set('view engine', 'pug');
 
 app.set('views', path.join(__dirname, 'views'));
+
+// Allow access to * origin
+app.use(cors());
+
+// Allow complex requests from * origin
+app.options('*', cors());
 
 // Serving Static Files
 
