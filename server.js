@@ -36,3 +36,9 @@ process.on('unhandledException', (err) => {
     process.exit(1);
   });
 });
+process.on('SIGTERM', () => {
+  console.log('SIGTERM Received Closing App');
+  server.close(() => {
+    console.log('Closed');
+  });
+});
