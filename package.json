@@ -8,7 +8,8 @@
     "start": "nodemon server.js",
     "start:prod": "SET NODE_ENV=production && nodemon server.js",
     "debug": "ndb server.js",
-    "build": "parcel watch ./public/js/index.js --out-dir ./public --out-file bundle.js"
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public --out-file bundle.js",
+    "build": "parcel build ./public/js/index.js --out-dir ./public --out-file bundle.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "@babel/polyfill": "^7.12.1",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

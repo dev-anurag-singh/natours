@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
+const compression = require('compression');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -65,6 +66,8 @@ app.use(xss());
 //   console.log(req.cookies.jwt);
 //   next();
 // });
+
+app.use(compression());
 
 // Routes
 app.use('/', viewsRouter);
