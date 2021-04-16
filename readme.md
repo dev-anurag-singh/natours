@@ -8,7 +8,7 @@
 
 ##### Details Page
 
-![Image of Tour-detail page](./public/img/project-img/tour-details.png)
+![Image of Tour-detail page](./public/img/project-img/tour-detail.png)
 
 ##### Login Page
 
