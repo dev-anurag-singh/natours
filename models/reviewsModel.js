@@ -75,6 +75,7 @@ reviewSchema.post('save', function () {
 });
 
 reviewSchema.pre(/^findOneAnd/, async function (next) {
+  // will response with the review based on review id
   this.r = await this.findOne();
 
   next();
