@@ -13,6 +13,7 @@ const jwtToken = (id) => {
 };
 
 const createSendToken = (statusCode, req, res, id, user) => {
+  // generating token
   const token = jwtToken(id);
 
   const cookieOptions = {
